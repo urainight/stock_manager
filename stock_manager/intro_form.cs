@@ -16,8 +16,16 @@ namespace stock_manager
         public intro_form()
         {
             InitializeComponent();
+            Dashboardbtn.Enabled = false;
         }
 
+        private void Productbtn_Click(object sender, EventArgs e)
+        {
+            var product_form = new product_form();
+            this.Hide();
+            product_form.ShowDialog();
+            this.Close();
+        }
 
     }
 }

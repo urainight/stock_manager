@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(register));
             this.Usernametxt = new System.Windows.Forms.TextBox();
             this.usernamelb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backbtn = new System.Windows.Forms.Button();
-            this.minimizebtn = new System.Windows.Forms.Button();
-            this.exitbtn = new System.Windows.Forms.Button();
             this.Emailtxt = new System.Windows.Forms.TextBox();
             this.emaillb = new System.Windows.Forms.Label();
             this.Passwordtxt = new System.Windows.Forms.TextBox();
             this.passwordlb = new System.Windows.Forms.Label();
             this.signupbtn = new System.Windows.Forms.Button();
-            this.hidebtn = new System.Windows.Forms.Button();
             this.showbtn = new System.Windows.Forms.Button();
+            this.hidebtn = new System.Windows.Forms.Button();
+            this.backbtn = new System.Windows.Forms.Button();
+            this.minimizebtn = new System.Windows.Forms.Button();
+            this.exitbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +53,7 @@
             this.Usernametxt.Name = "Usernametxt";
             this.Usernametxt.Size = new System.Drawing.Size(464, 35);
             this.Usernametxt.TabIndex = 1;
+            this.Usernametxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usernametxt_KeyDown);
             // 
             // usernamelb
             // 
@@ -93,51 +93,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 52);
             this.panel1.TabIndex = 4;
             // 
-            // backbtn
-            // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.backbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backbtn.BackgroundImage")));
-            this.backbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.backbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Location = new System.Drawing.Point(0, 0);
-            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(56, 52);
-            this.backbtn.TabIndex = 6;
-            this.backbtn.UseVisualStyleBackColor = false;
-            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
-            // 
-            // minimizebtn
-            // 
-            this.minimizebtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimizebtn.BackgroundImage")));
-            this.minimizebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.minimizebtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.minimizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizebtn.Location = new System.Drawing.Point(680, 0);
-            this.minimizebtn.Margin = new System.Windows.Forms.Padding(4);
-            this.minimizebtn.Name = "minimizebtn";
-            this.minimizebtn.Size = new System.Drawing.Size(56, 52);
-            this.minimizebtn.TabIndex = 6;
-            this.minimizebtn.UseVisualStyleBackColor = true;
-            this.minimizebtn.Click += new System.EventHandler(this.minimizebtn_Click);
-            // 
-            // exitbtn
-            // 
-            this.exitbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitbtn.BackgroundImage")));
-            this.exitbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.exitbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitbtn.Location = new System.Drawing.Point(744, 0);
-            this.exitbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.exitbtn.Name = "exitbtn";
-            this.exitbtn.Size = new System.Drawing.Size(56, 52);
-            this.exitbtn.TabIndex = 5;
-            this.exitbtn.UseVisualStyleBackColor = true;
-            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
-            // 
             // Emailtxt
             // 
             this.Emailtxt.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +101,7 @@
             this.Emailtxt.Name = "Emailtxt";
             this.Emailtxt.Size = new System.Drawing.Size(464, 35);
             this.Emailtxt.TabIndex = 1;
+            this.Emailtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Emailtxt_KeyDown);
             // 
             // emaillb
             // 
@@ -167,6 +123,7 @@
             this.Passwordtxt.PasswordChar = '●';
             this.Passwordtxt.Size = new System.Drawing.Size(464, 35);
             this.Passwordtxt.TabIndex = 1;
+            this.Passwordtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Passwordtxt_KeyDown);
             // 
             // passwordlb
             // 
@@ -191,9 +148,20 @@
             this.signupbtn.UseVisualStyleBackColor = true;
             this.signupbtn.Click += new System.EventHandler(this.signupbtn_Click);
             // 
+            // showbtn
+            // 
+            this.showbtn.BackgroundImage = global::stock_manager.Properties.Resources.show;
+            this.showbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.showbtn.Location = new System.Drawing.Point(597, 308);
+            this.showbtn.Name = "showbtn";
+            this.showbtn.Size = new System.Drawing.Size(35, 35);
+            this.showbtn.TabIndex = 7;
+            this.showbtn.UseVisualStyleBackColor = true;
+            this.showbtn.Click += new System.EventHandler(this.showbtn_Click_1);
+            // 
             // hidebtn
             // 
-            this.hidebtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hidebtn.BackgroundImage")));
+            this.hidebtn.BackgroundImage = global::stock_manager.Properties.Resources.invisible;
             this.hidebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.hidebtn.Location = new System.Drawing.Point(597, 308);
             this.hidebtn.Name = "hidebtn";
@@ -202,16 +170,50 @@
             this.hidebtn.UseVisualStyleBackColor = true;
             this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
             // 
-            // showbtn
+            // backbtn
             // 
-            this.showbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("showbtn.BackgroundImage")));
-            this.showbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.showbtn.Location = new System.Drawing.Point(597, 308);
-            this.showbtn.Name = "showbtn";
-            this.showbtn.Size = new System.Drawing.Size(35, 35);
-            this.showbtn.TabIndex = 7;
-            this.showbtn.UseVisualStyleBackColor = true;
-            this.showbtn.Click += new System.EventHandler(this.showbtn_Click_1);
+            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.backbtn.BackgroundImage = global::stock_manager.Properties.Resources.back;
+            this.backbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbtn.Location = new System.Drawing.Point(0, 0);
+            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(56, 52);
+            this.backbtn.TabIndex = 6;
+            this.backbtn.UseVisualStyleBackColor = false;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
+            // 
+            // minimizebtn
+            // 
+            this.minimizebtn.BackgroundImage = global::stock_manager.Properties.Resources.minimize_sign1;
+            this.minimizebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minimizebtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.minimizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizebtn.Location = new System.Drawing.Point(680, 0);
+            this.minimizebtn.Margin = new System.Windows.Forms.Padding(4);
+            this.minimizebtn.Name = "minimizebtn";
+            this.minimizebtn.Size = new System.Drawing.Size(56, 52);
+            this.minimizebtn.TabIndex = 6;
+            this.minimizebtn.UseVisualStyleBackColor = true;
+            this.minimizebtn.Click += new System.EventHandler(this.minimizebtn_Click);
+            // 
+            // exitbtn
+            // 
+            this.exitbtn.BackgroundImage = global::stock_manager.Properties.Resources.cancel1;
+            this.exitbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.exitbtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitbtn.Location = new System.Drawing.Point(744, 0);
+            this.exitbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.exitbtn.Name = "exitbtn";
+            this.exitbtn.Size = new System.Drawing.Size(56, 52);
+            this.exitbtn.TabIndex = 5;
+            this.exitbtn.UseVisualStyleBackColor = true;
+            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
             // 
             // register
             // 
@@ -232,10 +234,12 @@
             this.Controls.Add(this.Emailtxt);
             this.Controls.Add(this.Usernametxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "register";
+            this.Shown += new System.EventHandler(this.register_Shown);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

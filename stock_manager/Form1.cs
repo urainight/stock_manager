@@ -46,7 +46,7 @@ namespace stock_manager
 
         private void signuplinklb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var signup_form = new register(null);
+            var signup_form = new register();
             this.Hide();
             signup_form.ShowDialog();
             this.Close();
@@ -63,5 +63,25 @@ namespace stock_manager
                 passwordtb.PasswordChar = '*';
             }
         }
+
+        private void passwordtb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                loginbtn.PerformClick();
+            }
+        }
+        private void usernametb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                passwordtb.Focus();
+            }
+        }
+        private void Loginform_Shown(object sender, EventArgs e)
+        {
+            usernametb.Focus();
+        }
+
     }
 }

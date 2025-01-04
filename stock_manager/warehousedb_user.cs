@@ -18,27 +18,10 @@ namespace stock_manager
 {
     internal class warehousedb_user
     {
-        private static NpgsqlConnection GetConnection()
-        {
-            Env.Load();
-            string querry = Environment.GetEnvironmentVariable("DATABASE_URL");
-            Console.WriteLine($"Connection string: {querry}");
-            NpgsqlConnection conn = new NpgsqlConnection(querry);
-            try
-            {
-                conn.Open();
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show("SQL Connection! \n" +ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return conn;
-        }
-
         public static void AddUser(User std)
         {
             string querry = "INSERT INTO warehouse_stock.users(username, email, password, is_admin, date_joined) VALUES (@Username, @Useremail, @Userpassword, @Isadmin, @Datejoined)";
-            NpgsqlConnection con = GetConnection();
+            NpgsqlConnection con = Connect.GetConnection();
             NpgsqlCommand cmd = new NpgsqlCommand(querry, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@Username", NpgsqlDbType.Varchar).Value = std.username;
@@ -56,12 +39,12 @@ namespace stock_manager
             {
                 MessageBox.Show("User not insert. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            con.Close();
         }
-
         public static bool LoginUser(string username, string password)
         {
             string query = "SELECT password FROM warehouse_stock.users WHERE username = @Username";
-            NpgsqlConnection con = GetConnection();
+            NpgsqlConnection con = Connect.GetConnection();
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(query, con);
@@ -82,6 +65,7 @@ namespace stock_manager
                 Console.WriteLine(ex.Message);
                 return false;
             }
+            con.Close();
             return false;
         }
     }
