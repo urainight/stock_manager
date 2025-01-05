@@ -30,24 +30,24 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelwelcome = new System.Windows.Forms.Label();
-            this.Signoutbtn = new System.Windows.Forms.Button();
-            this.Productbtn = new System.Windows.Forms.Button();
-            this.Dashboardbtn = new System.Windows.Forms.Button();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.findtb = new System.Windows.Forms.TextBox();
             this.dashboardgridview = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.finfpicturebox = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finfpicturebox = new System.Windows.Forms.PictureBox();
+            this.Signoutbtn = new System.Windows.Forms.Button();
+            this.Productbtn = new System.Windows.Forms.Button();
+            this.Dashboardbtn = new System.Windows.Forms.Button();
+            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardgridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finfpicturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +76,116 @@
             this.labelwelcome.Size = new System.Drawing.Size(161, 28);
             this.labelwelcome.TabIndex = 1;
             this.labelwelcome.Text = "Welcome User";
+            // 
+            // findtb
+            // 
+            this.findtb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.findtb.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findtb.Location = new System.Drawing.Point(493, 31);
+            this.findtb.Name = "findtb";
+            this.findtb.Size = new System.Drawing.Size(348, 34);
+            this.findtb.TabIndex = 1;
+            this.findtb.TextChanged += new System.EventHandler(this.findtb_TextChanged);
+            // 
+            // dashboardgridview
+            // 
+            this.dashboardgridview.AllowUserToAddRows = false;
+            this.dashboardgridview.AllowUserToDeleteRows = false;
+            this.dashboardgridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboardgridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dashboardgridview.BackgroundColor = System.Drawing.Color.White;
+            this.dashboardgridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dashboardgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dashboardgridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dashboardgridview.Location = new System.Drawing.Point(247, 88);
+            this.dashboardgridview.MultiSelect = false;
+            this.dashboardgridview.Name = "dashboardgridview";
+            this.dashboardgridview.ReadOnly = true;
+            this.dashboardgridview.RowHeadersVisible = false;
+            this.dashboardgridview.RowHeadersWidth = 51;
+            this.dashboardgridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dashboardgridview.RowTemplate.Height = 24;
+            this.dashboardgridview.ShowEditingIcon = false;
+            this.dashboardgridview.Size = new System.Drawing.Size(662, 430);
+            this.dashboardgridview.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(239, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(224, 47);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Out of stock";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "product_id";
+            this.Column1.HeaderText = "Product_id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "product_name";
+            this.Column2.HeaderText = "Product_name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "quantity";
+            this.Column3.HeaderText = "Quantity";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "unit";
+            this.Column4.HeaderText = "Unit";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "date";
+            this.Column5.HeaderText = "Date";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "date_update";
+            this.Column6.HeaderText = "Date_update";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // finfpicturebox
+            // 
+            this.finfpicturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.finfpicturebox.BackColor = System.Drawing.Color.LightCoral;
+            this.finfpicturebox.BackgroundImage = global::stock_manager.Properties.Resources.magnifying_glass2;
+            this.finfpicturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.finfpicturebox.Location = new System.Drawing.Point(841, 31);
+            this.finfpicturebox.Name = "finfpicturebox";
+            this.finfpicturebox.Size = new System.Drawing.Size(68, 34);
+            this.finfpicturebox.TabIndex = 2;
+            this.finfpicturebox.TabStop = false;
             // 
             // Signoutbtn
             // 
@@ -148,116 +258,6 @@
             this.pictureUser.TabIndex = 1;
             this.pictureUser.TabStop = false;
             // 
-            // findtb
-            // 
-            this.findtb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.findtb.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findtb.Location = new System.Drawing.Point(493, 31);
-            this.findtb.Name = "findtb";
-            this.findtb.Size = new System.Drawing.Size(348, 34);
-            this.findtb.TabIndex = 1;
-            this.findtb.TextChanged += new System.EventHandler(this.findtb_TextChanged);
-            // 
-            // dashboardgridview
-            // 
-            this.dashboardgridview.AllowUserToAddRows = false;
-            this.dashboardgridview.AllowUserToDeleteRows = false;
-            this.dashboardgridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboardgridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dashboardgridview.BackgroundColor = System.Drawing.Color.White;
-            this.dashboardgridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dashboardgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dashboardgridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dashboardgridview.Location = new System.Drawing.Point(247, 88);
-            this.dashboardgridview.MultiSelect = false;
-            this.dashboardgridview.Name = "dashboardgridview";
-            this.dashboardgridview.ReadOnly = true;
-            this.dashboardgridview.RowHeadersVisible = false;
-            this.dashboardgridview.RowHeadersWidth = 51;
-            this.dashboardgridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dashboardgridview.RowTemplate.Height = 24;
-            this.dashboardgridview.ShowEditingIcon = false;
-            this.dashboardgridview.Size = new System.Drawing.Size(662, 430);
-            this.dashboardgridview.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 47);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Out of stock";
-            // 
-            // finfpicturebox
-            // 
-            this.finfpicturebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.finfpicturebox.BackColor = System.Drawing.Color.LightCoral;
-            this.finfpicturebox.BackgroundImage = global::stock_manager.Properties.Resources.magnifying_glass2;
-            this.finfpicturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.finfpicturebox.Location = new System.Drawing.Point(841, 31);
-            this.finfpicturebox.Name = "finfpicturebox";
-            this.finfpicturebox.Size = new System.Drawing.Size(68, 34);
-            this.finfpicturebox.TabIndex = 2;
-            this.finfpicturebox.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "product_id";
-            this.Column1.HeaderText = "Product_id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "product_name";
-            this.Column2.HeaderText = "Product_name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "quantity";
-            this.Column3.HeaderText = "Quantity";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "unit";
-            this.Column4.HeaderText = "Unit";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "date";
-            this.Column5.HeaderText = "Date";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "date_update";
-            this.Column6.HeaderText = "Date_update";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // intro_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,9 +276,9 @@
             this.Shown += new System.EventHandler(this.intro_form_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardgridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finfpicturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

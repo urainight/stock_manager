@@ -12,6 +12,7 @@ namespace stock_manager
 {
     public partial class Loginform : Form
     {
+        intro_form intro_form;
         public Loginform()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace stock_manager
             bool authen = warehousedb_user.LoginUser(usernametb.Text, passwordtb.Text);
             if (authen) 
             {
-                var intro_form = new intro_form();
+                intro_form = new intro_form(usernametb.Text);
                 this.Hide();
                 intro_form.ShowDialog();
                 this.Close();

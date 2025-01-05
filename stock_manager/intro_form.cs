@@ -13,14 +13,17 @@ namespace stock_manager
 {
     public partial class intro_form : Form
     {
-        public intro_form()
+        public string username;
+        public intro_form(string username)
         {
             InitializeComponent();
             Dashboardbtn.Enabled = false;
+            this.username = username;
+            labelwelcome.Text = $"Welcome {username}";
         }
         private void Productbtn_Click(object sender, EventArgs e)
         {
-            var product_form = new product_form();
+            var product_form = new product_form(username);
             this.Hide();
             product_form.ShowDialog();
             this.Close();
