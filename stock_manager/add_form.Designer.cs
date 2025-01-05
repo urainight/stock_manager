@@ -68,6 +68,7 @@
             this.Idtb.Name = "Idtb";
             this.Idtb.Size = new System.Drawing.Size(366, 34);
             this.Idtb.TabIndex = 1;
+            this.Idtb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Idtb_KeyDown);
             // 
             // Addbtn
             // 
@@ -108,6 +109,7 @@
             this.quantitytb.Name = "quantitytb";
             this.quantitytb.Size = new System.Drawing.Size(366, 34);
             this.quantitytb.TabIndex = 1;
+            this.quantitytb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quantitytb_KeyDown);
             // 
             // label4
             // 
@@ -126,6 +128,7 @@
             this.nametb.Name = "nametb";
             this.nametb.Size = new System.Drawing.Size(366, 34);
             this.nametb.TabIndex = 1;
+            this.nametb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nametb_KeyDown);
             // 
             // label5
             // 
@@ -144,6 +147,7 @@
             this.Unittb.Name = "Unittb";
             this.Unittb.Size = new System.Drawing.Size(366, 34);
             this.Unittb.TabIndex = 1;
+            this.Unittb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Unittb_KeyDown);
             // 
             // add_form
             // 
@@ -166,6 +170,7 @@
             this.Name = "add_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Shown += new System.EventHandler(this.add_form_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

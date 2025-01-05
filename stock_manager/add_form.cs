@@ -19,6 +19,43 @@ namespace stock_manager
             InitializeComponent();
             _parent = parent;
         }
+        private void add_form_Shown(object sender, EventArgs e)
+        {
+            Idtb.Focus();
+        }
+
+        private void Idtb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                nametb.Focus();
+            }
+        }
+
+        private void nametb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                quantitytb.Focus();
+            }
+        }
+
+        private void quantitytb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Unittb.Focus();
+            }
+        }
+
+        private void Unittb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Addbtn.PerformClick();
+            }
+        }
+
         public void UpdateInfo()
         {
             Productlb.Text = "Update Product";

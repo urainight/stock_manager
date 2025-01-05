@@ -69,5 +69,12 @@ namespace stock_manager
                 return;
             }
         }
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            var login_form = new Loginform();
+            this.Hide();
+            login_form.ShowDialog();
+            this.Close();
+        }
     }
 }
